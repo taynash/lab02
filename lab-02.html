@@ -388,7 +388,14 @@ glimpse(UN.country.population)</code></pre>
 ## $ name       &lt;chr&gt; &quot;Burundi&quot;, &quot;Comoros&quot;, &quot;Djibouti&quot;, &quot;Eritrea&quot;, &quot;Ethiopia&quot;, &quot;K…
 ## $ code       &lt;chr&gt; &quot;BDI&quot;, &quot;COM&quot;, &quot;DJI&quot;, &quot;ERI&quot;, &quot;ETH&quot;, &quot;KEN&quot;, &quot;MDG&quot;, &quot;MWI&quot;, &quot;MU…
 ## $ population &lt;dbl&gt; 11695.779, 783.646, 1065.644, 3473.983, 112602.827, 50442.6…</code></pre>
-<pre class="r"><code># Member 4 write code to load File 4 data here:</code></pre>
+<pre class="r"><code># Member 4 write code to load File 4 data here:
+un.country.region &lt;- read_xlsx(&quot;data/UN_country_region.xlsx&quot;)
+glimpse(un.country.region)</code></pre>
+<pre><code>## Rows: 237
+## Columns: 3
+## $ name   &lt;chr&gt; &quot;Aruba&quot;, &quot;Afghanistan&quot;, &quot;Angola&quot;, &quot;Anguilla&quot;, &quot;Albania&quot;, &quot;Andor…
+## $ code   &lt;chr&gt; &quot;ABW&quot;, &quot;AFG&quot;, &quot;AGO&quot;, &quot;AIA&quot;, &quot;ALB&quot;, &quot;AND&quot;, &quot;ARE&quot;, &quot;ARG&quot;, &quot;ARM&quot;, …
+## $ region &lt;chr&gt; &quot;Latin America and The Caribbean&quot;, &quot;Asia&quot;, &quot;Africa&quot;, &quot;Latin Ame…</code></pre>
 <pre class="r"><code># Member 1 write code to create object &#39;plastic_data_all&#39;:
 
 

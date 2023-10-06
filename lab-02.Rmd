@@ -31,7 +31,8 @@ glimpse(UN.country.population)
 
 
 # Member 4 write code to load File 4 data here:
-
+un.country.region <- read_xlsx("data/UN_country_region.xlsx")
+glimpse(un.country.region)
 
 
 ```
