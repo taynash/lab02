@@ -398,21 +398,10 @@ glimpse(un.country.region)</code></pre>
 ## $ region &lt;chr&gt; &quot;Latin America and The Caribbean&quot;, &quot;Asia&quot;, &quot;Africa&quot;, &quot;Latin Ame…</code></pre>
 <pre class="r"><code># Member 1 write code to create object &#39;plastic_data_all&#39;:
 plastic_data_all &lt;- mismanaged.plastic.waster.per.capita
-plastic_data_all %&gt;% head(n=10)</code></pre>
-<pre><code>## # A tibble: 10 × 3
-##    name                code  mismanaged_plastic
-##    &lt;chr&gt;               &lt;chr&gt;              &lt;dbl&gt;
-##  1 Albania             ALB               24.2  
-##  2 Algeria             DZA               17.8  
-##  3 Angola              AGO                7.45 
-##  4 Antigua and Barbuda ATG                6.46 
-##  5 Argentina           ARG               10.4  
-##  6 Australia           AUS                0.209
-##  7 Bahamas             BHS                5.69 
-##  8 Bahrain             BHR                0.636
-##  9 Bangladesh          BGD                6.27 
-## 10 Barbados            BRB                3.04</code></pre>
-<pre class="r"><code># Member 2 write code to join your data to &#39;plastic_data_all&#39;:
+
+
+
+# Member 2 write code to join your data to &#39;plastic_data_all&#39;:
 plastic_data_all &lt;- per.capita.ocean.plastic.waste %&gt;%
   select(-name) %&gt;%
   left_join(plastic_data_all, by = &quot;code&quot;)
@@ -428,7 +417,23 @@ plastic_data_all &lt;- UN.country.population %&gt;%
 plastic_data_all &lt;- un.country.region %&gt;%
   select(-name) %&gt;%
   right_join(plastic_data_all, by = &quot;code&quot;)</code></pre>
-<pre class="r"><code># Member 1 adds code here to view the first 10 rows of &#39;plastic_data_all&#39;</code></pre>
+<pre class="r"><code># Member 1 adds code here to view the first 10 rows of &#39;plastic_data_all&#39;
+
+plastic_data_all %&gt;% head(n=10)</code></pre>
+<pre><code>## # A tibble: 10 × 6
+##    code  region       population mismanaged_plastic_o…¹ name  mismanaged_plastic
+##    &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;                  &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;
+##  1 AGO   Africa          31808.                 0.0270  Ango…              7.45 
+##  2 ALB   Europe           2876.                 0.543   Alba…             24.2  
+##  3 ARE   Asia             9176.                 0.00143 Unit…              0.526
+##  4 ARG   Latin Ameri…    44583.                 0.0924  Arge…             10.4  
+##  5 ATG   Latin Ameri…       91.9                0.0206  Anti…              6.46 
+##  6 AUS   Oceania         25170.                 0.00127 Aust…              0.209
+##  7 BEL   Europe          11480.                 0.00295 Belg…              0.198
+##  8 BEN   Africa          12114.                 0.139   Benin             11.3  
+##  9 BFA   Africa          20671.                 0       Burk…             15.6  
+## 10 BGD   Asia           164605.                 0.151   Bang…              6.27 
+## # ℹ abbreviated name: ¹​mismanaged_plastic_ocean</code></pre>
 </div>
 <div id="exercises" class="section level2">
 <h2>Exercises</h2>

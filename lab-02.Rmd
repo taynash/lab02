@@ -42,7 +42,7 @@ glimpse(un.country.region)
 ```{r join-data, message = FALSE}
 # Member 1 write code to create object 'plastic_data_all':
 plastic_data_all <- mismanaged.plastic.waster.per.capita
-plastic_data_all %>% head(n=10)
+
 
 
 # Member 2 write code to join your data to 'plastic_data_all':
@@ -69,7 +69,7 @@ plastic_data_all <- un.country.region %>%
 ```{r print-data, message = FALSE}
 # Member 1 adds code here to view the first 10 rows of 'plastic_data_all'
 
-
+plastic_data_all %>% head(n=10)
 
 ```
 
