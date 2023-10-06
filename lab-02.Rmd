@@ -17,8 +17,8 @@ library(readxl)
 
 ```{r load-data, message = FALSE}
 # Member 1 write code to load File 1 data here:
-
-
+file1 <- read_csv("data/mismanaged-plastic-waste-per-capita.csv")
+glimpse(file1)
 
 # Member 2 write code to load File 2 data here:
 
