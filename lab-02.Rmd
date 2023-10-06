@@ -26,7 +26,8 @@ glimpse(per.capita.ocean.plastic.waste)
 
 
 # Member 3 write code to load File 3 data here:
-
+UN.country.population <- read_tsv("data/UN_country_population.tsv")
+glimpse(UN.country.population)
 
 
 # Member 4 write code to load File 4 data here:
