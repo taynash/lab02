@@ -92,7 +92,7 @@ Most = Africa
 
 ```{r Ex2, message = FALSE}
 # Write your code here to answer exercise 2
-
+plastic_data_all %>%  mutate(total_mismanage_plastic = population * mismanaged_plastic)
 
 
 ```
