@@ -58,7 +58,9 @@ plastic_data_all <- UN.country.population %>%
 
 
 # Member 4 write code to join your data to 'plastic_data_all':
-
+plastic_data_all <- un.country.region %>%
+  select(-name) %>%
+  right_join(plastic_data_all, by = "code")
 
 
 ```

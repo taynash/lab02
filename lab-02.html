@@ -424,7 +424,10 @@ plastic_data_all &lt;- UN.country.population %&gt;%
   right_join(plastic_data_all, by = &quot;code&quot;)
 
 
-# Member 4 write code to join your data to &#39;plastic_data_all&#39;:</code></pre>
+# Member 4 write code to join your data to &#39;plastic_data_all&#39;:
+plastic_data_all &lt;- un.country.region %&gt;%
+  select(-name) %&gt;%
+  right_join(plastic_data_all, by = &quot;code&quot;)</code></pre>
 <pre class="r"><code># Member 1 adds code here to view the first 10 rows of &#39;plastic_data_all&#39;</code></pre>
 </div>
 <div id="exercises" class="section level2">
