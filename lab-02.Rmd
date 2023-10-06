@@ -41,11 +41,14 @@ glimpse(un.country.region)
 
 ```{r join-data, message = FALSE}
 # Member 1 write code to create object 'plastic_data_all':
-
+plastic_data_all <- mismanaged.plastic.waster.per.capita
+plastic_data_all %>% head(n=10)
 
 
 # Member 2 write code to join your data to 'plastic_data_all':
-
+plastic_data_all <- per.capita.ocean.plastic.waste %>%
+  select(-name) %>%
+  left_join(plastic_data_all, by = "code")
 
 
 # Member 3 write code to join your data to 'plastic_data_all':
