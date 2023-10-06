@@ -17,11 +17,12 @@ library(readxl)
 
 ```{r load-data, message = FALSE}
 # Member 1 write code to load File 1 data here:
-file1 <- read_csv("data/mismanaged-plastic-waste-per-capita.csv")
-glimpse(file1)
+mismanaged.plastic.waster.per.capita <- read_csv("data/mismanaged-plastic-waste-per-capita.csv")
+glimpse(mismanaged.plastic.waster.per.capita)
 
 # Member 2 write code to load File 2 data here:
-
+per.capita.ocean.plastic.waste <- read_csv2("data/per-capita-ocean-plastic-waste.txt")
+glimpse(per.capita.ocean.plastic.waste)
 
 
 # Member 3 write code to load File 3 data here:

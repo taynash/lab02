@@ -365,18 +365,22 @@ library(readxl)</code></pre>
 <div id="load-join-data-sets" class="section level2">
 <h2>Load &amp; join data sets</h2>
 <pre class="r"><code># Member 1 write code to load File 1 data here:
-file1 &lt;- read_csv(&quot;data/mismanaged-plastic-waste-per-capita.csv&quot;)
-glimpse(file1)</code></pre>
+mismanaged.plastic.waster.per.capita &lt;- read_csv(&quot;data/mismanaged-plastic-waste-per-capita.csv&quot;)
+glimpse(mismanaged.plastic.waster.per.capita)</code></pre>
 <pre><code>## Rows: 159
 ## Columns: 3
 ## $ name               &lt;chr&gt; &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Antigua and Barbud…
 ## $ code               &lt;chr&gt; &quot;ALB&quot;, &quot;DZA&quot;, &quot;AGO&quot;, &quot;ATG&quot;, &quot;ARG&quot;, &quot;AUS&quot;, &quot;BHS&quot;, &quot;B…
 ## $ mismanaged_plastic &lt;dbl&gt; 24.2391531, 17.7589947, 7.4452789, 6.4639175, 10.40…</code></pre>
 <pre class="r"><code># Member 2 write code to load File 2 data here:
-
-
-
-# Member 3 write code to load File 3 data here:
+per.capita.ocean.plastic.waste &lt;- read_csv2(&quot;data/per-capita-ocean-plastic-waste.txt&quot;)
+glimpse(per.capita.ocean.plastic.waste)</code></pre>
+<pre><code>## Rows: 159
+## Columns: 3
+## $ name                     &lt;chr&gt; &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Antigua and …
+## $ code                     &lt;chr&gt; &quot;ALB&quot;, &quot;DZA&quot;, &quot;AGO&quot;, &quot;ATG&quot;, &quot;ARG&quot;, &quot;AUS&quot;, &quot;BH…
+## $ mismanaged_plastic_ocean &lt;dbl&gt; 0.543214162, 0.134113767, 0.027022781, 0.0206…</code></pre>
+<pre class="r"><code># Member 3 write code to load File 3 data here:
 
 
 
