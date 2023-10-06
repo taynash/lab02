@@ -52,7 +52,9 @@ plastic_data_all <- per.capita.ocean.plastic.waste %>%
 
 
 # Member 3 write code to join your data to 'plastic_data_all':
-
+plastic_data_all <- UN.country.population %>%
+  select(-name) %>%
+  right_join(plastic_data_all, by = "code")
 
 
 # Member 4 write code to join your data to 'plastic_data_all':

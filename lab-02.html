@@ -419,7 +419,9 @@ plastic_data_all &lt;- per.capita.ocean.plastic.waste %&gt;%
 
 
 # Member 3 write code to join your data to &#39;plastic_data_all&#39;:
-
+plastic_data_all &lt;- UN.country.population %&gt;%
+  select(-name) %&gt;%
+  right_join(plastic_data_all, by = &quot;code&quot;)
 
 
 # Member 4 write code to join your data to &#39;plastic_data_all&#39;:</code></pre>
