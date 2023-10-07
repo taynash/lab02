@@ -11,7 +11,7 @@
 
 <meta name="author" content="Team Name: Tay Nash, Steven Carswell, and Nereus" />
 
-<meta name="date" content="2023-10-06" />
+<meta name="date" content="2023-10-07" />
 
 <title>Lab 02 - Global plastic waste</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Lab 02 - Global plastic waste</h1>
 <h4 class="author">Team Name: Tay Nash, Steven Carswell, and Nereus</h4>
-<h4 class="date">2023-10-06</h4>
+<h4 class="date">2023-10-07</h4>
 
 </div>
 
@@ -455,31 +455,51 @@ plastic_data_all %&gt;% count(region)</code></pre>
 <div id="ex-2." class="section level3">
 <h3>Ex 2.</h3>
 <pre class="r"><code># Write your code here to answer exercise 2
-plastic_data_all %&gt;%  mutate(total_mismanage_plastic = population * mismanaged_plastic)</code></pre>
-<pre><code>## # A tibble: 159 × 7
-##    code  region       population mismanaged_plastic_o…¹ name  mismanaged_plastic
-##    &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;                  &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;
-##  1 AGO   Africa          31808.                 0.0270  Ango…              7.45 
-##  2 ALB   Europe           2876.                 0.543   Alba…             24.2  
-##  3 ARE   Asia             9176.                 0.00143 Unit…              0.526
-##  4 ARG   Latin Ameri…    44583.                 0.0924  Arge…             10.4  
-##  5 ATG   Latin Ameri…       91.9                0.0206  Anti…              6.46 
-##  6 AUS   Oceania         25170.                 0.00127 Aust…              0.209
-##  7 BEL   Europe          11480.                 0.00295 Belg…              0.198
-##  8 BEN   Africa          12114.                 0.139   Benin             11.3  
-##  9 BFA   Africa          20671.                 0       Burk…             15.6  
-## 10 BGD   Asia           164605.                 0.151   Bang…              6.27 
-## # ℹ 149 more rows
-## # ℹ abbreviated name: ¹​mismanaged_plastic_ocean
-## # ℹ 1 more variable: total_mismanage_plastic &lt;dbl&gt;</code></pre>
+plastic_data_all %&gt;%  mutate(total_mismanage_plastic = population * mismanaged_plastic) %&gt;% group_by(region) %&gt;%summarise(avg_mmw = mean(total_mismanage_plastic))</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##   region                           avg_mmw
+##   &lt;chr&gt;                              &lt;dbl&gt;
+## 1 Africa                           320729.
+## 2 Asia                            1026059.
+## 3 Europe                            38180.
+## 4 Latin America and The Caribbean  193450.
+## 5 North America                    147190.
+## 6 Oceania                           14577.</code></pre>
 </div>
 <div id="ex-3." class="section level3">
 <h3>Ex 3.</h3>
-<pre class="r"><code># Write your code here to answer exercise 3</code></pre>
+<pre class="r"><code># Write your code here to answer exercise 3
+
+plastic_data_all %&gt;% mutate(pct_mismanaged_plastic_ocean = (mismanaged_plastic_ocean/mismanaged_plastic)*100) %&gt;% group_by(region) %&gt;% summarise(median_pct = median(pct_mismanaged_plastic_ocean, na.rm = T))</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##   region                          median_pct
+##   &lt;chr&gt;                                &lt;dbl&gt;
+## 1 Africa                               0.526
+## 2 Asia                                 0.974
+## 3 Europe                               0.846
+## 4 Latin America and The Caribbean      3.07 
+## 5 North America                        0.959
+## 6 Oceania                              1.58</code></pre>
 </div>
 <div id="ex-4." class="section level3">
 <h3>Ex 4.</h3>
-<pre class="r"><code># Write your code here to answer exercise 4</code></pre>
+<pre class="r"><code># Write your code here to answer exercise 4
+
+plastic_data_all %&gt;% rename(pop = population, mmpc = mismanaged_plastic_ocean, mmp = mismanaged_plastic)</code></pre>
+<pre><code>## # A tibble: 159 × 6
+##    code  region                               pop    mmpc name               mmp
+##    &lt;chr&gt; &lt;chr&gt;                              &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;
+##  1 AGO   Africa                           31808.  0.0270  Angola           7.45 
+##  2 ALB   Europe                            2876.  0.543   Albania         24.2  
+##  3 ARE   Asia                              9176.  0.00143 United Arab Em…  0.526
+##  4 ARG   Latin America and The Caribbean  44583.  0.0924  Argentina       10.4  
+##  5 ATG   Latin America and The Caribbean     91.9 0.0206  Antigua and Ba…  6.46 
+##  6 AUS   Oceania                          25170.  0.00127 Australia        0.209
+##  7 BEL   Europe                           11480.  0.00295 Belgium          0.198
+##  8 BEN   Africa                           12114.  0.139   Benin           11.3  
+##  9 BFA   Africa                           20671.  0       Burkina Faso    15.6  
+## 10 BGD   Asia                            164605.  0.151   Bangladesh       6.27 
+## # ℹ 149 more rows</code></pre>
 </div>
 </div>
 
